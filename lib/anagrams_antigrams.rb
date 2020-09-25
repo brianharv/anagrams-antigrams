@@ -1,7 +1,6 @@
 require('pry')
 
 class Checker
-  attr_reader(:word_array)
   attr_accessor(:input_one, :input_two)
 
   def initialize (input_one, input_two)
@@ -21,9 +20,22 @@ class Checker
       end 
   end
 
-
+  def is_word?
+     if @input_one.scan(/[aeiou]/).count >= 1
+      puts "Your first input is a word."
+      return true
+    else
+      puts "I'm sorry, your first input is not a word." 
+      return false
+    end
+  end     
 end  
 
  
 
-#
+# /[aeiou]/.match?(@input_two)  
+# if true
+#   return "Your second input is a word."
+# else
+#   return "I'm sorry, your second input is not a word." 
+# end
