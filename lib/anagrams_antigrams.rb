@@ -28,5 +28,14 @@ class Checker
       puts "Uh oh, either #{input_one} and/or #{input_two} are NOT words "
       return false
     end
-  end     
+  end
+  
+  def is_antigram?
+    if /[@input_one]/.match?(@input_two)
+      puts "These two words ARE NOT antigrams"
+      return false
+    else
+      puts "WOW! These two words ARE ANTIGRAMS, meaning they dont share any of the same letters."  
+    end
+  end    
 end  

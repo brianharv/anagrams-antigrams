@@ -24,5 +24,9 @@ describe('Checker') do
       expect(new_checker.is_word?()).to(eq(true))
     end
   end
-  
+
+  describe('Checker#is_antigram') do
+    it('checks to see if inputs are antigrams - meaning they share none of the same letters') do
+      new_checker = Checker.new("holy", "crow")
+      expect(new_checker.is_antigram?()).to(eq(true))
 end
