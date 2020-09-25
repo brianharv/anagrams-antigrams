@@ -33,6 +33,8 @@ class Checker
   def is_antigram?
     if /[@input_one]/.match?(@input_two)
       puts "These two words ARE NOT antigrams"
+      puts @input_one
+      puts @input_two
       return false
     else
       puts "WOW! These two words ARE ANTIGRAMS, meaning they dont share any of the same letters."  
