@@ -2,7 +2,7 @@ require('rspec')
 require('anagrams_antigrams')
 
 
-Describe('Checker') do
+describe('Checker') do
   
   describe('Checker#is_anagram') do
     it('checks to see if user input is an anagram or not') do
@@ -11,5 +11,5 @@ Describe('Checker') do
     end
   end
 
-  
+
 end
