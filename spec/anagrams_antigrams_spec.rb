@@ -10,6 +10,12 @@ describe('Checker') do
       expect(new_checker.is_anagram?()).to(eq(true))
     end
   end
-
-
+  
+  describe('Checker#is_anagram') do
+    it('ignores letter case when checking two words') do
+      new_checker = Checker.new("Listen", "Silent")
+      expect(new_checker.is_anagram?()).to(eq(false))
+    end
+  end
+  
 end
