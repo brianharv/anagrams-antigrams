@@ -27,7 +27,7 @@ describe('Checker') do
 
   describe('Checker#is_antigram') do
     it('checks to see if inputs are antigrams - meaning they share none of the same letters') do
-      new_checker = Checker.new("odor", "smile")
+      new_checker = Checker.new("tootie", "mall")
       expect(new_checker.is_antigram?()).to(eq(true))
     end
   end    

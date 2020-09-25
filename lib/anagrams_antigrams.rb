@@ -31,13 +31,13 @@ class Checker
   end
   
   def is_antigram?
-    if /[@input_one]/.match?(@input_two)
-      puts "These two words ARE NOT antigrams"
-      puts @input_one
-      puts @input_two
+    if /["#{@input_one}"]/.match("#{@input_two}")
+      puts "These two words are NOT antigrams"
       return false
-    else
-      puts "WOW! These two words ARE ANTIGRAMS, meaning they dont share any of the same letters."  
+      else
+      puts "WOW! These two words are ANTIGRAMS, meaning they dont share any of the same letters." 
+      return true
     end
   end    
-end  
+
+end
