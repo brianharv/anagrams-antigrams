@@ -32,10 +32,10 @@ describe('Checker') do
     end
   end
   
-  describe('Checker#is_phrase_anagram') do
+  describe('Checker#phrase_to_words') do
     it('checks to see if two phrases contain anagrams') do
-      new_checker = Checker.new("Silence is golden", "Listen to me")
-      expect(new_checker.is_phrase_anagram?()).to(eq(true))
+      new_checker = Checker.new("Listen", "Silent")
+      expect(new_checker.phrase_to_words()).to(eq(true))
     end
   end    
 end
