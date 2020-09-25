@@ -8,7 +8,7 @@ class Checker
     @input_two = input_two
   end
 
-  def is_anagram?
+  def is_word_anagram?
     word_one = @input_one.downcase.split('').sort.join
     word_two = @input_two.downcase.split('').sort.join
       if word_one == word_two
@@ -38,6 +38,5 @@ class Checker
       puts "WOW! These two words are ANTIGRAMS, meaning they dont share any of the same letters." 
       return true
     end
-  end    
-
+  end
 end
