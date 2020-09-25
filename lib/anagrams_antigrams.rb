@@ -33,11 +33,11 @@ class Checker
   end
 
   def is_word?
-     if @input_one.scan(/[aeiou]/).count >= 1 && @input_two.scan(/[aeiou]/).count >= 1
-      puts "Can confirm, '#{input_one}' and '#{input_two}' are words."
+    if @input_one.scan(/[aeiou]/).count >= 1 && @input_two.scan(/[aeiou]/).count >= 1
+      puts "Can confirm, '#{input_one}' and '#{input_two}' are using words."
       return true
     else
-      puts "Uh oh, either '#{input_one}' and/or '#{input_two}' are NOT words "
+      puts "Uh oh, either '#{input_one}' and/or '#{input_two}' do NOT contain words "
       return false
     end
   end
@@ -52,20 +52,3 @@ class Checker
     end
   end
 end  
-
-#   def phrase_to_words
-    
-#       return true
-#     else
-#       return false
-#     end    
-#   end
-
-
-
-#.sort.join
-#.sort.join
-
-# word_one = @input_one.downcase.split('').sort.join
-# word_two = @input_two.downcase.split('').sort.join
-#   if word_one == word_two
