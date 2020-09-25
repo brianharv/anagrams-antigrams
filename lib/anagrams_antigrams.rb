@@ -28,14 +28,12 @@ class Checker
       puts "I'm sorry, your first input is not a word." 
       return false
     end
+    if @input_two.scan(/[aeiou]/).count >= 1
+      puts "Your second input is a word."
+      return true
+    else
+      puts "I'm sorry, your second input is not a word." 
+      return false
+    end
   end     
 end  
-
- 
-
-# /[aeiou]/.match?(@input_two)  
-# if true
-#   return "Your second input is a word."
-# else
-#   return "I'm sorry, your second input is not a word." 
-# end
