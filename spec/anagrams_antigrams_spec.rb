@@ -20,7 +20,7 @@ describe('Checker') do
 
   describe('Checker#is_word') do
     it('checks to see if inputs are words') do
-      new_checker = Checker.new("ttkrks", "brbfr")
+      new_checker = Checker.new("foodie", "brbfr")
       expect(new_checker.is_word?()).to(eq(true))
     end
   end

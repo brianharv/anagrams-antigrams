@@ -21,18 +21,11 @@ class Checker
   end
 
   def is_word?
-     if @input_one.scan(/[aeiou]/).count >= 1
-      puts "Your first input is a word."
+     if @input_one.scan(/[aeiou]/).count >= 1 && @input_two.scan(/[aeiou]/).count >= 1
+      puts "Can cofirm, #{input_one} and #{input_two} are words."
       return true
     else
-      puts "I'm sorry, your first input is not a word." 
-      return false
-    end
-    if @input_two.scan(/[aeiou]/).count >= 1
-      puts "Your second input is a word."
-      return true
-    else
-      puts "I'm sorry, your second input is not a word." 
+      puts "Uh oh, either #{input_one} and/or #{input_two} are NOT words "
       return false
     end
   end     
