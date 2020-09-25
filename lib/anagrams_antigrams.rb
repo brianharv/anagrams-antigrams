@@ -43,14 +43,14 @@ class Checker
   def phrase_to_words
     array_one = []
     array_two = []
-    word_array_one = @input_one.downcase.split(' ').sort_by(&:length)
+    word_array_one = @input_one.downcase.split(/\W+/).sort_by(&:length)
     word_array_one.each do |word|
       array_one.push(word.split('').sort.join)
     end
     puts array_one
     array_one
 
-    word_array_two = @input_two.downcase.split(' ').sort_by(&:length)
+    word_array_two = @input_two.downcase.split(/\W+/).sort_by(&:length)
     word_array_two.each do |word|
       array_two.push(word.split('').sort.join)
     end
