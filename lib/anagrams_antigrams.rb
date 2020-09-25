@@ -12,7 +12,7 @@ class Checker
   def is_anagram?
     word_one = @input_one.split('').sort.join
     word_two = @input_two.split('').sort.join
-      if word_one.casecmp == word_two.casecmp
+      if word_one.casecmp?(word_two)
         puts "Yes! \n#{input_one} and #{input_two} are anagrams!"
         return true
       else
