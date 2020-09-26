@@ -24,22 +24,60 @@ class Checker
     array_two
 
     if array_one[0] == array_two[0] || array_one[1] == array_two[1] || array_one[2] == array_two[2] || array_one[3] == array_two[3]
-        puts "Yes! \n'#{input_one}' and '#{input_two}' contain anagrams!"
-        return true
-      else
-        puts "I'm sorry, '#{input_one}' and '#{input_two}' do not provide anagrams"
-        return false
-      end 
+      puts "Yes! \n'#{input_one}' and '#{input_two}' contain anagrams!"
+      return true
+    else
+      puts "I'm sorry, '#{input_one}' and '#{input_two}' do not provide anagrams"
+      return false
+    end 
   end
   
   def is_antigram?
-    if /["#{@input_one}"]/.match("#{@input_two}")
-      puts "These two words are NOT antigrams"
-      return false
-      else
-      puts "WOW! These two words are ANTIGRAMS, meaning they dont share any of the same letters." 
-      return true
+    array_one = []
+    array_two = []
+    index = 0
+    word_array_one.each do |word|
+      array_one.push(word.split('').sort.join)
     end
+    array_one
+
+    word_array_two.each do |word|
+      array_two.push(word.split('').sort.join)
+    end
+    array_two
+
+    while index < array_two.length
+      array_one.each do |word|
+        if /["#{array_one[index]}"]/.match(array_two[index]) 
+          puts "NOT antigram"
+        else
+          puts "ANTIGRAM"
+        end
+      end  
+    index += 1
+    return true 
+    end        
+
+    # if /["#{array_one[0]}"]/.match(array_two[0]) 
+    #   puts "The first two words are NOT antigrams."
+    #   puts array_one[0]
+    #   return false
+    # elsif
+    #   puts "WOW! The first two words are ANTIGRAMS, meaning they dont share any of the same letters." 
+    #   return true
+    # elsif /["#{array_one[1]}"]/.match("#{array_two[1]}")
+    #   puts "The second two words are NOT antigrams"
+    #   return false
+    # elsif
+    #   puts "Hey! The second two words are ANTIGRAMS."
+    #   return true
+    # elsif /["#{array_one[2]}"]/.match("#{array_two[2]}")
+    #   puts "The third two words are NOT antigrams"
+    #   return false
+    # else
+    #   puts "Hey! The third two words are ANTIGRAMS."
+    #   return true      
+    # end
   end
 
 
@@ -51,8 +89,7 @@ class Checker
           puts "Uh oh, '#{input_one}' contains an entry that is not a word."
           return false
         end
-      end
-      puts array_one      
+      end      
       array_one
 
     array_two = []
@@ -67,13 +104,9 @@ class Checker
 
     if array_one.reduce(:+) >= array_one.length && array_two.reduce(:+) >= array_two.length
       puts "Can confirm, '#{input_one}' and '#{input_two}' are using words."
-      puts @input_one
-      puts @input_two
       return true
     else
       puts "Uh oh, either '#{input_one}' and/or '#{input_two}' do NOT contain words "
-      puts @input_one
-      puts @input_two
       return false
     end
   end  
