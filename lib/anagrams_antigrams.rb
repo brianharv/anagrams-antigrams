@@ -57,27 +57,6 @@ class Checker
     index += 1
     return true 
     end        
-
-    # if /["#{array_one[0]}"]/.match(array_two[0]) 
-    #   puts "The first two words are NOT antigrams."
-    #   puts array_one[0]
-    #   return false
-    # elsif
-    #   puts "WOW! The first two words are ANTIGRAMS, meaning they dont share any of the same letters." 
-    #   return true
-    # elsif /["#{array_one[1]}"]/.match("#{array_two[1]}")
-    #   puts "The second two words are NOT antigrams"
-    #   return false
-    # elsif
-    #   puts "Hey! The second two words are ANTIGRAMS."
-    #   return true
-    # elsif /["#{array_one[2]}"]/.match("#{array_two[2]}")
-    #   puts "The third two words are NOT antigrams"
-    #   return false
-    # else
-    #   puts "Hey! The third two words are ANTIGRAMS."
-    #   return true      
-    # end
   end
 
 
@@ -106,7 +85,7 @@ class Checker
       puts "Can confirm, '#{input_one}' and '#{input_two}' are using words."
       return true
     else
-      puts "Uh oh, either '#{input_one}' and/or '#{input_two}' do NOT contain words "
+      #puts "Uh oh, either '#{input_one}' and/or '#{input_two}' do NOT contain words."
       return false
     end
   end  

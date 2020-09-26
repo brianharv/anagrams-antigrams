@@ -19,7 +19,7 @@ _This app receives user input and determines whether or not the provided input c
 
 ## Known Bugs
 
-_No known bugs_
+_Script not currently working_
 
 ## Support and contact details
 
