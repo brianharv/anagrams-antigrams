@@ -1,23 +1,23 @@
 require('pry')
 
 class Checker
-  attr_accessor(:input_one, :input_two)
+  attr_accessor(:input_one, :input_two, :word_array_one, :word_array_two)
 
   def initialize (input_one, input_two)
     @input_one = input_one
     @input_two = input_two
+    @word_array_one = @input_one.downcase.split(/\W+/).sort_by(&:length)
+    @word_array_two = @input_two.downcase.split(/\W+/).sort_by(&:length)
   end
 
   def is_word_anagram?
     array_one = []
     array_two = []
-    word_array_one = @input_one.downcase.split(/\W+/).sort_by(&:length)
     word_array_one.each do |word|
       array_one.push(word.split('').sort.join)
     end
     array_one
 
-    word_array_two = @input_two.downcase.split(/\W+/).sort_by(&:length)
     word_array_two.each do |word|
       array_two.push(word.split('').sort.join)
     end
@@ -45,7 +45,6 @@ class Checker
 
   def is_word?
     array_one = []
-    word_array_one = @input_one.downcase.split(/\W+/).sort_by(&:length)
     word_array_one.each do |word|
       array_one.push(word.scan(/[aeiou]/).count)
         if array_one.reduce(:+) == 0
@@ -57,7 +56,6 @@ class Checker
       array_one
 
     array_two = []
-    word_array_two = @input_two.downcase.split(/\W+/).sort_by(&:length)
     word_array_two.each do |word|
       array_two.push(word.scan(/[aeiou]/).count)
         if array_two.reduce(:+) == 0
