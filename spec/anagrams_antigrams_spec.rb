@@ -25,6 +25,13 @@ describe('Checker') do
     end
   end
 
+  describe('Checker#is_word') do
+    it('checks if all inputs in phrases are words') do
+      new_checker = Checker.new("Listen hrr you", "You're silent")
+      expect(new_checker.is_word?()).to(eq(false))
+    end
+  end    
+
   describe('Checker#is_antigram') do
     it('checks to see if inputs are antigrams - meaning they share none of the same letters') do
       new_checker = Checker.new("tootie", "mall")

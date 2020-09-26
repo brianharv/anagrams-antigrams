@@ -31,16 +31,6 @@ class Checker
         return false
       end 
   end
-
-  def is_word?
-    if @input_one.scan(/[aeiou]/).count >= 1 && @input_two.scan(/[aeiou]/).count >= 1
-      puts "Can confirm, '#{input_one}' and '#{input_two}' are using words."
-      return true
-    else
-      puts "Uh oh, either '#{input_one}' and/or '#{input_two}' do NOT contain words "
-      return false
-    end
-  end
   
   def is_antigram?
     if /["#{@input_one}"]/.match("#{@input_two}")
@@ -51,4 +41,42 @@ class Checker
       return true
     end
   end
+
+
+  def is_word?
+    array_one = []
+    word_array_one = @input_one.downcase.split(/\W+/).sort_by(&:length)
+    word_array_one.each do |word|
+      array_one.push(word.scan(/[aeiou]/).count)
+        if array_one.reduce(:+) == 0
+          puts "Uh oh, '#{input_one}' contains an entry that is not a word."
+          return false
+        end
+      end
+      puts array_one      
+      array_one
+
+    array_two = []
+    word_array_two = @input_two.downcase.split(/\W+/).sort_by(&:length)
+    word_array_two.each do |word|
+      array_two.push(word.scan(/[aeiou]/).count)
+        if array_two.reduce(:+) == 0
+          puts "Uh oh, '#{input_two}' contains an entry that is not a word."
+          return false
+        end
+      end      
+      array_two  
+
+    if array_one.reduce(:+) >= array_one.length && array_two.reduce(:+) >= array_two.length
+      puts "Can confirm, '#{input_one}' and '#{input_two}' are using words."
+      puts @input_one
+      puts @input_two
+      return true
+    else
+      puts "Uh oh, either '#{input_one}' and/or '#{input_two}' do NOT contain words "
+      puts @input_one
+      puts @input_two
+      return false
+    end
+  end  
 end  
