@@ -50,8 +50,10 @@ class Checker
     while index < array_two.length
       array_one.each do |word|
         if /["#{array_one[index]}"]/.match(array_two[index]) 
+          puts "Not Antigram"
           antigram_array.push(false)
         else
+          puts "ANTIGRAM"
           antigram_array.push(true)
         end
       end  
