@@ -5,19 +5,25 @@ require('anagrams_antigrams')
 describe('Checker') do
 
 
-  # describe('Checker#is_word') do
-  #   it('checks to see if inputs are words') do
-  #     new_checker = Checker.new("Listen", "Silent")
-  #     expect(new_checker.is_word?()).to(eq(true))
-  #   end
-  # end
+  describe('Checker#is_word') do
+    it('checks to see if inputs are words') do
+      new_checker = Checker.new("Listen", "Silent")
+      expect(new_checker.is_word?()).to(eq(true))
+    end
+  end
 
-  # describe('Checker#is_word') do
-  #   it('checks if all inputs in phrases are words') do
-  #     new_checker = Checker.new("Listen hrr you", "You're silent")
-  #     expect(new_checker.is_word?()).to(eq(false))
-  #   end
-  # end    
+  describe('Checker#is_word') do
+    it('checks if all inputs in phrases are words') do
+      new_checker = Checker.new("ghdskl", "sdjerh")
+      expect(new_checker.is_word?()).to(eq(false))
+    end
+  end
+  describe('Checker#is_word') do
+    it('checks if all inputs in phrases are words') do
+      new_checker = Checker.new("chord", "sdjrh")
+      expect(new_checker.is_word?()).to(eq(false))
+    end
+  end     
 
   describe('Checker#is_word_anagram') do
     it('checks to see if user input is an anagram or not') do
@@ -33,12 +39,12 @@ describe('Checker') do
     end
   end
 
-  # describe('Checker#is_antigram') do
-  #   it('checks to see if inputs are antigrams - meaning they share none of the same letters') do
-  #     new_checker = Checker.new("tootie", "mall")
-  #     expect(new_checker.is_antigram?()).to(eq([true]))
-  #   end
-  # end
+  describe('Checker#is_antigram') do
+    it('checks to see if inputs are antigrams - meaning they share none of the same letters') do
+      new_checker = Checker.new("tootie", "mall")
+      expect(new_checker.is_antigram?()).to(eq(true))
+    end
+  end
 
   # describe('Checker#is_antigram') do
   #   it('checks to see if multi word inputs are antigrams') do
