@@ -6,8 +6,8 @@ class Checker
   def initialize (input_one, input_two)
     @input_one = input_one
     @input_two = input_two
-    @input_letters_one = @input_one.downcase.gsub(/[^a-z]/, '')
-    @input_letters_two = @input_two.downcase.gsub(/[^a-z]/, '')
+    @input_letters_one = @input_one.downcase.gsub(/[^A-Za-z]/, '')
+    @input_letters_two = @input_two.downcase.gsub(/[^A-Za-z]/, '')
   end
 
   def is_word_anagram? 

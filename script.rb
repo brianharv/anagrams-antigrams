@@ -8,13 +8,18 @@ puts "Thank you! \n Please enter another word or phrase (max 3 words)."
 input_two = gets.chomp
 new_checker = Checker.new(input_one, input_two)
 
-if !new_checker.is_word?
-  puts "sorry that's not a word"
-elsif new_checker.is_word_anagram?
-  puts "HEY!! '#{new_checker.input_one}' and '#{new_checker.input_two}' are ANAGRAMS" 
-elsif new_checker.is_antigram?
-  puts "WOW! '#{new_checker.input_one}' and '#{new_checker.input_two}' are ANTIGRAMS" 
+if new_checker.is_word?
 else
-  puts "You'll get em next time but, '#{new_checker.input_one}' and '#{new_checker.input_two}' are not ANTIGRAMS OR ANAGRAMS"
-end    
+  puts "That's not a word"
+end
+if new_checker.is_word_anagram?
+  puts "That's an ANAGRAM!"
+else
+  puts "That's NOT an ANAGRAM!" 
+end
+if new_checker.is_antigram?  
+  puts "Hey that's actually an ANTIGRAM!"
+else
+  puts "That not an antigram..."
+end       
 

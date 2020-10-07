@@ -58,12 +58,5 @@ describe('Checker') do
       new_checker = Checker.new("Listen to me", "You aren't nice") 
       expect(new_checker.is_antigram?()).to(eq(false)) 
     end
-  end    
-  
-  # describe('Checker#is_word_anagram') do
-  #   it('checks to see if two phrases contain anagrams') do
-  #     new_checker = Checker.new("Listen to me", "You're silent")
-  #     expect(new_checker.is_word_anagram?()).to(eq(false))
-  #   end
-  # end    
+  end     
 end
