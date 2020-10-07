@@ -11,7 +11,7 @@ class Checker
   end
 
   def is_word_anagram?
-    if @input_letters_one.chars.sort.join == @input_letters_two.chars.sort.join
+    if (@input_letters_one.chars.sort.join == @input_letters_two.chars.sort.join) && (@input_letters_one.length == @input_letters_two.length)
       return true
     else
       false
@@ -35,8 +35,6 @@ class Checker
 
     if check_one > 0 && check_two > 0
       puts "Can confirm, '#{input_one}' and '#{input_two}' are using words."
-      puts check_two
-      puts check_one
       return true
     else
       return false
@@ -53,34 +51,4 @@ class Checker
       return true
     end    
   end
-  # def is_antigram?
-  #   array_one = []
-  #   array_two = []
-  #   index = 0
-  #   word_array_one.each do |word|
-  #     array_one.push(word.split('').sort.join)
-  #   end
-  #   array_one
-
-  #   word_array_two.each do |word|
-  #     array_two.push(word.split('').sort.join)
-  #   end
-  #   array_two
-
-  #   antigram_array = []
-  #   while index < array_two.length
-  #     array_one.each do |word|
-  #       if /["#{array_one[index]}"]/.match(array_two[index]) 
-  #         puts "Not Antigram"
-  #         antigram_array.push(false)
-  #       else
-  #         puts "ANTIGRAM"
-  #         antigram_array.push(true)
-  #       end
-  #     end  
-  #   index += 1
-  #   return antigram_array
-  #   end        
-  # end
-
 end  
