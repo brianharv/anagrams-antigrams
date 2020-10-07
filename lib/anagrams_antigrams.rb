@@ -10,11 +10,11 @@ class Checker
     @input_letters_two = @input_two.downcase.gsub(/[^a-z]/, '')
   end
 
-  def is_word_anagram?
-    if (@input_letters_one.chars.sort.join == @input_letters_two.chars.sort.join) && (@input_letters_one.length == @input_letters_two.length)
+  def is_word_anagram? 
+    if @input_letters_one.chars.sort.join == @input_letters_two.chars.sort.join
       return true
     else
-      false
+      return false
     end  
   end 
 
@@ -42,13 +42,13 @@ class Checker
   end
 
   def is_antigram?
-    anti_check_one = @input_letters_one
-    anti_check_two = @input_letters_two
+    anti_check_one = @input_letters_one.split('')
+    anti_check_two = @input_letters_two.split('')
 
-    if /["#{anti_check_one}"]/.match(anti_check_two)
-      return false
-    else
+    if anti_check_two - anti_check_one === anti_check_two
       return true
+    else
+      return false
     end    
   end
 end  
