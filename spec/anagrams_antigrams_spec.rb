@@ -42,7 +42,7 @@ describe('Checker') do
   describe('Checker#is_word_anagram') do
     it('checks to make sure inputs are the same length') do
       new_checker = Checker.new("Listening", "Silent")
-      expect(new_checker.is_word_anagram?()).to(eq(true))
+      expect(new_checker.is_word_anagram?()).to(eq(false))
     end
   end
 
