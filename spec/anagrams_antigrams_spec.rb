@@ -39,6 +39,13 @@ describe('Checker') do
     end
   end
 
+  describe('Checker#is_word_anagram') do
+    it('checks to make sure inputs are the same length') do
+      new_checker = Checker.new("Listening", "Silent")
+      expect(new_checker.is_word_anagram?()).to(eq(true))
+    end
+  end
+
   describe('Checker#is_antigram') do
     it('checks to see if inputs are antigrams - meaning they share none of the same letters') do
       new_checker = Checker.new("tootie", "mall")
