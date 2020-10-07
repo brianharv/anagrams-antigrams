@@ -16,7 +16,8 @@ class Checker
     else
       false
     end    
-  end      
+  end     
+   
 
   def is_word?
     array_one = []
