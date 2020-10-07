@@ -1,17 +1,17 @@
 require('pry')
 
 class Checker
-  attr_accessor(:input_one, :input_two, :word_array_one, :word_array_two)
+  attr_accessor(:input_one, :input_two, :input_letters_one, :input_letters_two)
 
   def initialize (input_one, input_two)
     @input_one = input_one
     @input_two = input_two
-    @word_array_one = @input_one.downcase.split(/\W+/).sort_by(&:length)
-    @word_array_two = @input_two.downcase.split(/\W+/).sort_by(&:length)
+    @input_letters_one = @input_one.downcase.gsub(/[^a-z]/, '')
+    @input_letters_two = @input_two.downcase.gsub(/[^a-z]/, '')
   end
 
   def is_word_anagram?
-    if 
+    if @input_letters_one.chars.sort.join == @input_letters_two.chars.sort.join
       return true
     else
       false
@@ -20,7 +20,7 @@ class Checker
 
   def is_word?
     array_one = []
-    word_array_one.each do |word|
+    input_letters_one.each do |word|
       array_one.push(word.scan(/[aeiou]/).count)
         if array_one.reduce(:+) == 0
           puts "Uh oh, '#{input_one}' contains an entry that is not a word."
@@ -30,7 +30,7 @@ class Checker
       array_one
 
     array_two = []
-    word_array_two.each do |word|
+    input_letters_two.each do |word|
       array_two.push(word.scan(/[aeiou]/).count)
         if array_two.reduce(:+) == 0
           puts "Uh oh, '#{input_two}' contains an entry that is not a word."
